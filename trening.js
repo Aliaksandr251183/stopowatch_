@@ -7,9 +7,13 @@ window.addEventListener('DOMContentLoaded', () => {
         hour = stopwatch.querySelector('#hour'),
         minute = stopwatch.querySelector('#minute'),
         second = stopwatch.querySelector('#second'),
-        milisecond = stopwatch.querySelector('#milisecond'),
-        zeroBlocks = document.querySelectorAll('.block');
-        
+        milisecond = stopwatch.querySelector('#milisecond');
+    
+    let countRedBut = 0,
+        timerNew = 0,
+        countBlueBut = 0,
+        timeInterval;
+   
     function getZero(num) {
         if (num >= 0 && num < 10) {
             return `0${num}`;
@@ -18,10 +22,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    let countRedBut = 0,
-        timerNew = 0,
-        timeInterval;
-   
     butRed.addEventListener('click', () => {
         countRedBut += 1; 
         butRed.classList.toggle('button-yellow');
@@ -42,11 +42,8 @@ window.addEventListener('DOMContentLoaded', () => {
             butRed.classList.add('button-red');
             clearInterval(timeInterval);
         }
-        
-        console.log(countRedBut);
     });      
   
-    let countBlueBut = 0;
     butBlue.addEventListener('click', () => {
         countBlueBut += 1;
         if (countBlueBut >= 1) {
@@ -54,10 +51,6 @@ window.addEventListener('DOMContentLoaded', () => {
             butRed.classList.add('button-red');
             countRedBut = 0;
             clearInterval(timeInterval);
-            // zeroBlocks.forEach(elem => {
-            //     elem.innerHTML = '';
-            //     elem.innerHTML = '00';           
-            // });
             timerNew = 0;
             const secondTime = Math.floor((timerNew / 100) % 60),
                 minuteTime = Math.floor((timerNew / (100 * 60)) % 60),
