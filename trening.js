@@ -19,45 +19,13 @@ window.addEventListener('DOMContentLoaded', () => {
             return num;
         }
     }
-    
-
-    // butBlue.addEventListener('click', () => {
-    //     countBlueBut += 1;
-        
-    //     zeroBlocks.forEach(elem => {
-    //         elem.innerHTML = '';
-    //         elem.innerHTML = '00';
-            
-    //     });
-    //     // const timerNew = 0,
-    //     //     secondTime = Math.floor((timerNew / 100) % 60),
-    //     //     minuteTime = Math.floor((timerNew / (100 * 60)) % 60),
-    //     //     hourTime = Math.floor((timerNew * 60 * 60) % 24),
-    //     //     milisecondTime = Math.floor(timerNew % 100);
-    //     // clearInterval(timeInterval);
-    //     // timeInterval.forEach(elem => {
-    //     //     elem = 0;
-    //     // });
-
-    //     if (butRed.classList.contains('button-yellow')) {
-    //         butRed.classList.remove('button-yellow');
-    //         butRed.classList.add('button-red');
-    //     }
-        
-    //     // second.innerHTML = getZero(secondTime);
-    //     // minute.innerHTML = getZero(minuteTime);
-    //     // hour.innerHTML = getZero(hourTime);
-    //     // milisecond.innerHTML = getZero(milisecondTime);
-        
-    // });
     function redButton() {
         let timeInterval = false,
             timerNew = 0,
             countRedBut = 0;
             
         butRed.addEventListener('click', () => {
-            countRedBut += 1;  
-            
+            countRedBut += 1; 
             if (countRedBut % 2 !== 0 || countBlueBut >= 1) {
                 timeInterval = setInterval(function () {
                     const secondTime = Math.floor((timerNew / 100) % 60),
